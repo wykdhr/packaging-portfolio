@@ -1,4 +1,4 @@
-import services from '../data/services.json'
+import { services } from '../data/index.js'
 import SectionTitle from '../components/shared/SectionTitle'
 import ServiceCard from '../components/services/ServiceCard'
 import Button from '../components/shared/Button'

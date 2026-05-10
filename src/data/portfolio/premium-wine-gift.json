@@ -1,0 +1,20 @@
+{
+  "id": "premium-wine-gift",
+  "title": "高端红酒礼盒",
+  "category": "beverage",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=红酒礼盒",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=红酒礼盒-01",
+    "https://placehold.co/1200x800/EEE/999?text=红酒礼盒-02"
+  ],
+  "description": "进口红酒双支装礼盒，采用实木与皮革结合，配以烫金 logo，适合商务馈赠场景。",
+  "client": "醇酿酒业",
+  "year": 2025,
+  "featured": true,
+  "tags": [
+    "红酒包装",
+    "实木",
+    "皮革",
+    "商务礼品"
+  ]
+}

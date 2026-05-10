@@ -1,0 +1,20 @@
+{
+  "id": "craft-beer-series",
+  "title": "精酿啤酒系列",
+  "category": "beverage",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=精酿啤酒",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=精酿啤酒-01",
+    "https://placehold.co/1200x800/EEE/999?text=精酿啤酒-02"
+  ],
+  "description": "手工精酿啤酒系列包装，以插画形式讲述每款啤酒的故事，打造独特的品牌辨识度。",
+  "client": "麦芽堂精酿",
+  "year": 2024,
+  "featured": false,
+  "tags": [
+    "饮料包装",
+    "插画",
+    "品牌设计",
+    "标签设计"
+  ]
+}

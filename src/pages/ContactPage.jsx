@@ -1,4 +1,4 @@
-import company from '../data/company.json'
+import { company } from '../data/index.js'
 import SectionTitle from '../components/shared/SectionTitle'
 import ContactForm from '../components/contact/ContactForm'
 

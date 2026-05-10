@@ -1,0 +1,20 @@
+{
+  "id": "children-snack-pack",
+  "title": "儿童零食系列",
+  "category": "food",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=儿童零食",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=儿童零食-01",
+    "https://placehold.co/1200x800/EEE/999?text=儿童零食-02"
+  ],
+  "description": "儿童健康零食系列包装，以活泼可爱的插画角色为主视觉，采用安全环保材质，吸引亲子消费群体。",
+  "client": "小馋猫食品",
+  "year": 2024,
+  "featured": false,
+  "tags": [
+    "儿童食品",
+    "插画",
+    "安全材质",
+    "亲子"
+  ]
+}

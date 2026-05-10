@@ -1,0 +1,21 @@
+{
+  "id": "lipstick-collection",
+  "title": "口红系列包装",
+  "category": "cosmetic",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=口红系列",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=口红系列-01",
+    "https://placehold.co/1200x800/EEE/999?text=口红系列-02",
+    "https://placehold.co/1200x800/EEE/999?text=口红系列-03"
+  ],
+  "description": "彩妆品牌口红系列包装升级，以渐变色彩与金属质感呼应产品色号，吸引年轻女性消费群体。",
+  "client": "ColorMe",
+  "year": 2025,
+  "featured": false,
+  "tags": [
+    "彩妆包装",
+    "渐变",
+    "金属质感",
+    "女性向"
+  ]
+}

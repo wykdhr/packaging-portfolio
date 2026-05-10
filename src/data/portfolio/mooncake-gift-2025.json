@@ -1,0 +1,20 @@
+{
+  "id": "mooncake-gift-2025",
+  "title": "月之礼月饼礼盒",
+  "category": "gift",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=月饼礼盒",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=月饼礼盒-01",
+    "https://placehold.co/1200x800/EEE/999?text=月饼礼盒-02"
+  ],
+  "description": "中秋月饼礼盒设计，融合现代审美与传统元素，双层抽屉式结构，兼具美观与实用。",
+  "client": "月圆食品",
+  "year": 2025,
+  "featured": true,
+  "tags": [
+    "中秋礼盒",
+    "抽屉式",
+    "烫金",
+    "传统与现代"
+  ]
+}

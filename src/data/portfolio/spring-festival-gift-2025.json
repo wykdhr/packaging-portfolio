@@ -1,0 +1,21 @@
+{
+  "id": "spring-festival-gift-2025",
+  "title": "春节团圆礼盒",
+  "category": "gift",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=春节礼盒",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=春节礼盒-01",
+    "https://placehold.co/1200x800/EEE/999?text=春节礼盒-02",
+    "https://placehold.co/1200x800/EEE/999?text=春节礼盒-03"
+  ],
+  "description": "为知名食品品牌设计的春节礼盒，以传统窗花为灵感，采用烫金工艺与特种纸，呈现浓厚的节日氛围。",
+  "client": "XX食品集团",
+  "year": 2025,
+  "featured": true,
+  "tags": [
+    "烫金",
+    "特种纸",
+    "节日礼盒",
+    "传统元素"
+  ]
+}

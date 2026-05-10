@@ -1,0 +1,20 @@
+{
+  "id": "coffee-bean-pouch",
+  "title": "精品咖啡豆袋",
+  "category": "beverage",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=咖啡豆袋",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=咖啡豆袋-01",
+    "https://placehold.co/1200x800/EEE/999?text=咖啡豆袋-02"
+  ],
+  "description": "精品咖啡品牌包装升级，采用哑光质感袋体搭配地域特色图案，每款单品拥有独立的视觉识别。",
+  "client": "深焙咖啡",
+  "year": 2024,
+  "featured": false,
+  "tags": [
+    "咖啡包装",
+    "哑光",
+    "地域特色",
+    "视觉识别"
+  ]
+}

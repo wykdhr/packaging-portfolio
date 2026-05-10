@@ -7,51 +7,57 @@ local_backend: true
 media_folder: public/images
 public_folder: /images
 
-site_url: http://localhost:5173
-display_url: http://localhost:5173
-
 locale: zh_Hans
 
 collections:
   - name: portfolio
     label: 作品集
-    folder: src/data
+    label_singular: 作品
+    folder: src/data/portfolio
     create: true
-    slug: "{{slug}}"
+    identifier_field: title
+    slug: "{{id}}"
     editor:
       preview: false
     fields:
-      - { label: "ID", name: "id", widget: "string", hint: "英文标识，如 spring-festival-gift-2025" }
+      - { label: "标识ID", name: "id", widget: "string", hint: "英文，如 spring-festival-gift-2025" }
       - { label: "作品标题", name: "title", widget: "string" }
-      - { label: "分类", name: "category", widget: "select", options: ["food", "cosmetic", "gift", "beverage", "other"], default: "food" }
+      - { label: "分类", name: "category", widget: "select", options: ["food", "cosmetic", "gift", "beverage", "other"] }
       - { label: "缩略图", name: "thumbnail", widget: "image" }
-      - { label: "详情图片", name: "images", widget: "list", field: { label: "图片", name: "image", widget: "image" } }
+      - label: "详情图片"
+        name: "images"
+        widget: "list"
+        field: { label: "图片", name: "image", widget: "image" }
       - { label: "描述", name: "description", widget: "text" }
       - { label: "客户名称", name: "client", widget: "string" }
       - { label: "年份", name: "year", widget: "number", value_type: "int" }
       - { label: "首页精选", name: "featured", widget: "boolean", default: false }
-      - { label: "标签", name: "tags", widget: "list", field: { label: "标签", name: "tag", widget: "string" } }
+      - label: "标签"
+        name: "tags"
+        widget: "list"
+        field: { label: "标签", name: "tag", widget: "string" }
 
   - name: services
     label: 服务项目
-    folder: src/data
+    label_singular: 服务
+    folder: src/data/services
     create: true
-    slug: "{{slug}}"
+    identifier_field: title
+    slug: "{{id}}"
     editor:
       preview: false
     fields:
-      - { label: "ID", name: "id", widget: "string" }
-      - { label: "图标", name: "icon", widget: "string" }
+      - { label: "标识ID", name: "id", widget: "string" }
+      - { label: "图标代码", name: "icon", widget: "string", hint: "可选: food, cosmetic, gift, brand, print, structure" }
       - { label: "服务名称", name: "title", widget: "string" }
       - { label: "服务描述", name: "description", widget: "text" }
-      - { label: "具体项目", name: "items", widget: "list", field: { label: "项目", name: "item", widget: "string" } }
+      - label: "具体项目"
+        name: "items"
+        widget: "list"
+        field: { label: "项目", name: "item", widget: "string" }
 
   - name: company
     label: 公司信息
-    folder: src/data
-    create: false
-    editor:
-      preview: false
     files:
       - name: company
         label: 公司信息

@@ -1,0 +1,20 @@
+{
+  "id": "perfume-gift-box",
+  "title": "香水限定礼盒",
+  "category": "cosmetic",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=香水礼盒",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=香水礼盒-01",
+    "https://placehold.co/1200x800/EEE/999?text=香水礼盒-02"
+  ],
+  "description": "香水品牌节日限定礼盒，采用丝绒内衬与磁吸开合设计，从开箱体验传递品牌的优雅气质。",
+  "client": "芳华纪",
+  "year": 2025,
+  "featured": false,
+  "tags": [
+    "香水包装",
+    "丝绒",
+    "磁吸",
+    "节日限定"
+  ]
+}

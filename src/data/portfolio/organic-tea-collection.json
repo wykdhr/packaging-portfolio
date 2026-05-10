@@ -1,0 +1,21 @@
+{
+  "id": "organic-tea-collection",
+  "title": "有机茶叶系列",
+  "category": "beverage",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=有机茶叶",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=有机茶叶-01",
+    "https://placehold.co/1200x800/EEE/999?text=有机茶叶-02",
+    "https://placehold.co/1200x800/EEE/999?text=有机茶叶-03"
+  ],
+  "description": "高山有机茶叶系列包装，采用环保牛皮纸与植物染料印刷，传递自然健康的品牌理念。",
+  "client": "云雾茶庄",
+  "year": 2024,
+  "featured": false,
+  "tags": [
+    "茶叶包装",
+    "环保",
+    "牛皮纸",
+    "自然风格"
+  ]
+}

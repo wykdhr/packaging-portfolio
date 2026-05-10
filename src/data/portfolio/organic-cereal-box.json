@@ -1,0 +1,20 @@
+{
+  "id": "organic-cereal-box",
+  "title": "有机谷物包装",
+  "category": "food",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=有机谷物",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=有机谷物-01",
+    "https://placehold.co/1200x800/EEE/999?text=有机谷物-02"
+  ],
+  "description": "有机谷物早餐系列包装，以简约线条画搭配大地色系，强调产品天然健康的属性。",
+  "client": "谷粒多",
+  "year": 2024,
+  "featured": false,
+  "tags": [
+    "谷物包装",
+    "极简",
+    "大地色",
+    "健康食品"
+  ]
+}

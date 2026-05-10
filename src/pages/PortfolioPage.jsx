@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
-import portfolio from '../data/portfolio.json'
+import { portfolio } from '../data/index.js'
 import SectionTitle from '../components/shared/SectionTitle'
 import FilterBar from '../components/portfolio/FilterBar'
 import PortfolioGrid from '../components/portfolio/PortfolioGrid'

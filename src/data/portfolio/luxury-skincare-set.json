@@ -1,0 +1,21 @@
+{
+  "id": "luxury-skincare-set",
+  "title": "奢华护肤套装",
+  "category": "cosmetic",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=护肤套装",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=护肤套装-01",
+    "https://placehold.co/1200x800/EEE/999?text=护肤套装-02",
+    "https://placehold.co/1200x800/EEE/999?text=护肤套装-03"
+  ],
+  "description": "高端护肤品牌礼盒设计，采用磁吸翻盖结构，搭配珠光纸与烫银工艺，彰显奢华质感。",
+  "client": "美肌密语",
+  "year": 2025,
+  "featured": true,
+  "tags": [
+    "化妆品包装",
+    "磁吸翻盖",
+    "珠光纸",
+    "烫银"
+  ]
+}

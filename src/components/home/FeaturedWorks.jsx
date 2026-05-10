@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import portfolio from '../../data/portfolio.json'
+import { portfolio } from '../../data/index.js'
 import LazyImage from '../shared/LazyImage'
 import SectionTitle from '../shared/SectionTitle'
 import Button from '../shared/Button'

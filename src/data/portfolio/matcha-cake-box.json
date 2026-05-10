@@ -1,0 +1,20 @@
+{
+  "id": "matcha-cake-box",
+  "title": "抹茶糕点包装",
+  "category": "food",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=抹茶糕点",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=抹茶糕点-01",
+    "https://placehold.co/1200x800/EEE/999?text=抹茶糕点-02"
+  ],
+  "description": "日式抹茶糕点系列包装设计，以自然绿为主色调，运用极简美学体现产品的高端品质与清新口感。",
+  "client": "绿野茶食",
+  "year": 2024,
+  "featured": true,
+  "tags": [
+    "食品包装",
+    "极简",
+    "日式风格",
+    "绿色环保"
+  ]
+}

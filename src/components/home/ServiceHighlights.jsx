@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import services from '../../data/services.json'
+import { services } from '../../data/index.js'
 import SectionTitle from '../shared/SectionTitle'
 import Button from '../shared/Button'
 

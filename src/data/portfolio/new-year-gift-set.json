@@ -1,0 +1,20 @@
+{
+  "id": "new-year-gift-set",
+  "title": "企业年礼套装",
+  "category": "gift",
+  "thumbnail": "https://placehold.co/600x400/EEE/999?text=企业年礼",
+  "images": [
+    "https://placehold.co/1200x800/EEE/999?text=企业年礼-01",
+    "https://placehold.co/1200x800/EEE/999?text=企业年礼-02"
+  ],
+  "description": "为科技公司定制的企业年礼套装，将企业文化元素融入包装设计，包含笔记本、日历等多件套礼盒。",
+  "client": "某科技公司",
+  "year": 2025,
+  "featured": false,
+  "tags": [
+    "企业定制",
+    "套装礼盒",
+    "品牌融入",
+    "年礼"
+  ]
+}
