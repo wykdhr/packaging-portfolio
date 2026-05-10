@@ -17,6 +17,8 @@ collections:
     create: true
     identifier_field: title
     slug: "{{id}}"
+    extension: json
+    format: json
     editor:
       preview: false
     fields:
@@ -44,6 +46,8 @@ collections:
     create: true
     identifier_field: title
     slug: "{{id}}"
+    extension: json
+    format: json
     editor:
       preview: false
     fields:
