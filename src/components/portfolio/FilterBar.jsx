@@ -1,18 +1,10 @@
 import { motion } from 'framer-motion'
-
-const categories = [
-  { key: 'all', label: '全部' },
-  { key: 'food', label: '食品包装' },
-  { key: 'cosmetic', label: '化妆品包装' },
-  { key: 'gift', label: '礼品盒' },
-  { key: 'beverage', label: '饮料包装' },
-  { key: 'other', label: '其他' },
-]
+import { site } from '../../data/index.js'
 
 export default function FilterBar({ active, onChange }) {
   return (
     <div className="flex flex-wrap gap-3 justify-center mb-12">
-      {categories.map((cat) => {
+      {site.portfolio.categories.map((cat) => {
         const isActive = active === cat.key
         return (
           <motion.button

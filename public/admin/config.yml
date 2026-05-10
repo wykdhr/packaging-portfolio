@@ -68,14 +68,154 @@ collections:
           - { label: "成立年份", name: "founded", widget: "number", value_type: "int" }
           - { label: "公司简介", name: "description", widget: "markdown" }
           - { label: "品牌理念", name: "philosophy", widget: "string" }
-          - { label: "联系电话", name: "contact.phone", widget: "string" }
-          - { label: "邮箱", name: "contact.email", widget: "string" }
-          - { label: "地址", name: "contact.address", widget: "string" }
-          - { label: "微信", name: "contact.wechat", widget: "string" }
+          - name: contact
+            label: 联系方式
+            widget: object
+            fields:
+              - { label: "电话", name: "phone", widget: "string" }
+              - { label: "邮箱", name: "email", widget: "string" }
+              - { label: "地址", name: "address", widget: "string" }
+              - { label: "微信", name: "wechat", widget: "string" }
           - name: milestones
             label: 发展历程
             widget: list
             fields:
               - { label: "年份", name: "year", widget: "number", value_type: "int" }
               - { label: "标题", name: "title", widget: "string" }
-              - { label: "描述", name: "description", widget: "string" }
+              - { label: "描述", name: "description", widget: "text" }
+
+  - name: settings
+    label: 站点设置
+    files:
+      - name: site
+        label: 全局设置
+        file: src/data/site.json
+        fields:
+          - name: logo
+            label: Logo
+            widget: object
+            fields:
+              - { label: "主文字", name: "text", widget: "string" }
+              - { label: "点缀符号", name: "accent", widget: "string" }
+          - name: nav
+            label: 导航菜单
+            widget: list
+            fields:
+              - { label: "显示文字", name: "label", widget: "string" }
+              - { label: "链接路径", name: "path", widget: "string" }
+          - name: home
+            label: 首页
+            widget: object
+            fields:
+              - name: hero
+                label: Hero 区域
+                widget: object
+                fields:
+                  - { label: "标题第一行", name: "title1", widget: "string" }
+                  - { label: "标题第二行（金色）", name: "title2", widget: "string" }
+                  - { label: "副标题", name: "subtitle", widget: "string" }
+                  - { label: "主按钮文字", name: "cta1", widget: "string" }
+                  - { label: "次按钮文字", name: "cta2", widget: "string" }
+              - name: featured
+                label: 精选作品区
+                widget: object
+                fields:
+                  - { label: "标题", name: "title", widget: "string" }
+                  - { label: "副标题", name: "subtitle", widget: "string" }
+                  - { label: "查看更多文字", name: "cta", widget: "string" }
+              - name: services
+                label: 服务亮点区
+                widget: object
+                fields:
+                  - { label: "标题", name: "title", widget: "string" }
+                  - { label: "副标题", name: "subtitle", widget: "string" }
+                  - { label: "查看更多文字", name: "cta", widget: "string" }
+          - name: portfolio
+            label: 作品集页
+            widget: object
+            fields:
+              - { label: "页面标题", name: "title", widget: "string" }
+              - { label: "页面副标题", name: "subtitle", widget: "string" }
+              - { label: "空状态标题", name: "emptyTitle", widget: "string" }
+              - { label: "空状态说明", name: "empty", widget: "string" }
+              - { label: "客户前缀", name: "clientLabel", widget: "string" }
+              - { label: "无图片提示", name: "noImage", widget: "string" }
+              - name: categories
+                label: 分类列表
+                widget: list
+                fields:
+                  - { label: "分类标识", name: "key", widget: "string" }
+                  - { label: "分类名称", name: "label", widget: "string" }
+          - name: services
+            label: 服务项目页
+            widget: object
+            fields:
+              - { label: "页面标题", name: "title", widget: "string" }
+              - { label: "页面副标题", name: "subtitle", widget: "string" }
+              - { label: "CTA标题", name: "ctaTitle", widget: "string" }
+              - { label: "CTA副标题", name: "ctaSubtitle", widget: "string" }
+              - { label: "CTA按钮文字", name: "ctaButton", widget: "string" }
+          - name: about
+            label: 关于我们页
+            widget: object
+            fields:
+              - { label: "页面标题", name: "title", widget: "string" }
+              - { label: "页面副标题", name: "subtitle", widget: "string" }
+              - { label: "简介区标题", name: "introTitle", widget: "string" }
+              - { label: "历程区标题", name: "timelineTitle", widget: "string" }
+              - { label: "历程区副标题", name: "timelineSubtitle", widget: "string" }
+          - name: contact
+            label: 联系我们页
+            widget: object
+            fields:
+              - { label: "页面标题", name: "title", widget: "string" }
+              - { label: "页面副标题", name: "subtitle", widget: "string" }
+              - { label: "表单区标题", name: "formTitle", widget: "string" }
+              - { label: "信息区标题", name: "infoTitle", widget: "string" }
+              - { label: "工作时间区标题", name: "hoursTitle", widget: "string" }
+              - name: form
+                label: 表单文案
+                widget: object
+                fields:
+                  - { label: "姓名占位符", name: "namePlaceholder", widget: "string" }
+                  - { label: "邮箱占位符", name: "emailPlaceholder", widget: "string" }
+                  - { label: "主题占位符", name: "subjectPlaceholder", widget: "string" }
+                  - { label: "留言占位符", name: "messagePlaceholder", widget: "string" }
+                  - { label: "提交按钮", name: "submitButton", widget: "string" }
+                  - { label: "成功提示", name: "successMessage", widget: "string" }
+                  - { label: "失败提示", name: "errorMessage", widget: "string" }
+                  - { label: "姓名校验错误", name: "nameError", widget: "string" }
+                  - { label: "邮箱校验错误", name: "emailError", widget: "string" }
+                  - { label: "邮箱格式错误", name: "emailFormatError", widget: "string" }
+                  - { label: "主题校验错误", name: "subjectError", widget: "string" }
+                  - { label: "留言校验错误", name: "messageError", widget: "string" }
+              - name: hours
+                label: 工作时间
+                widget: object
+                fields:
+                  - { label: "工作日", name: "weekday", widget: "string" }
+                  - { label: "周六", name: "saturday", widget: "string" }
+                  - { label: "周日", name: "sunday", widget: "string" }
+              - name: labels
+                label: 联系信息标签
+                widget: object
+                fields:
+                  - { label: "电话标签", name: "phone", widget: "string" }
+                  - { label: "邮箱标签", name: "email", widget: "string" }
+                  - { label: "地址标签", name: "address", widget: "string" }
+                  - { label: "微信标签", name: "wechat", widget: "string" }
+          - name: footer
+            label: 页脚
+            widget: object
+            fields:
+              - { label: "描述文字", name: "description", widget: "string" }
+              - { label: "快速链接标题", name: "quickLinks", widget: "string" }
+              - { label: "联系信息标题", name: "contactTitle", widget: "string" }
+              - { label: "版权后缀", name: "copyright", widget: "string" }
+          - name: notFound
+            label: 404页面
+            widget: object
+            fields:
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "提示文字", name: "message", widget: "string" }
+              - { label: "返回链接文字", name: "backHome", widget: "string" }

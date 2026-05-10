@@ -1,13 +1,10 @@
 import { motion } from 'framer-motion'
 import LazyImage from '../shared/LazyImage'
+import { site } from '../../data/index.js'
 
-const categoryLabels = {
-  food: '食品包装',
-  cosmetic: '化妆品包装',
-  gift: '礼品盒',
-  beverage: '饮料包装',
-  other: '其他',
-}
+const categoryLabels = Object.fromEntries(
+  site.portfolio.categories.filter(c => c.key !== 'all').map(c => [c.key, c.label])
+)
 
 export default function PortfolioCard({ item, onClick }) {
   return (

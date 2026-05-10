@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { useParams } from 'react-router-dom'
-import { portfolio } from '../data/index.js'
+import { portfolio, site } from '../data/index.js'
 import SectionTitle from '../components/shared/SectionTitle'
 import FilterBar from '../components/portfolio/FilterBar'
 import PortfolioGrid from '../components/portfolio/PortfolioGrid'
@@ -16,7 +16,6 @@ export default function PortfolioPage() {
     return portfolio.filter((item) => item.category === activeCategory)
   }, [activeCategory])
 
-  // If there's an id param, find and show the modal
   const modalItem = id
     ? portfolio.find((item) => item.id === id) || selectedItem
     : selectedItem
@@ -25,8 +24,8 @@ export default function PortfolioPage() {
     <div className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
         <SectionTitle
-          title="作品集"
-          subtitle="每一个项目，都是我们与品牌共同讲述的故事"
+          title={site.portfolio.title}
+          subtitle={site.portfolio.subtitle}
         />
 
         <FilterBar active={activeCategory} onChange={setActiveCategory} />

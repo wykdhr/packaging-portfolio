@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { services } from '../../data/index.js'
+import { services, site } from '../../data/index.js'
 import SectionTitle from '../shared/SectionTitle'
 import Button from '../shared/Button'
 
@@ -49,11 +49,12 @@ const iconMap = {
 
 export default function ServiceHighlights() {
   const highlights = services.slice(0, 4)
+  const { services: section } = site.home
 
   return (
     <section className="py-24 md:py-32 bg-primary/5">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionTitle title="我们的服务" subtitle="从创意到落地，一站式包装设计解决方案" />
+        <SectionTitle title={section.title} subtitle={section.subtitle} />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {highlights.map((service, index) => (
@@ -78,7 +79,7 @@ export default function ServiceHighlights() {
 
         <div className="text-center mt-12">
           <Button to="/services" variant="ghost" size="md">
-            了解更多 &rarr;
+            {section.cta}
           </Button>
         </div>
       </div>

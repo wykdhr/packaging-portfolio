@@ -2,14 +2,11 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import LazyImage from '../shared/LazyImage'
+import { site } from '../../data/index.js'
 
-const categoryLabels = {
-  food: '食品包装',
-  cosmetic: '化妆品包装',
-  gift: '礼品盒',
-  beverage: '饮料包装',
-  other: '其他',
-}
+const categoryLabels = Object.fromEntries(
+  site.portfolio.categories.filter(c => c.key !== 'all').map(c => [c.key, c.label])
+)
 
 export default function PortfolioModal({ item, onClose }) {
   const [currentImage, setCurrentImage] = useState(0)
@@ -17,9 +14,7 @@ export default function PortfolioModal({ item, onClose }) {
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
-    return () => {
-      document.body.style.overflow = ''
-    }
+    return () => { document.body.style.overflow = '' }
   }, [])
 
   useEffect(() => {
@@ -54,7 +49,6 @@ export default function PortfolioModal({ item, onClose }) {
           className="bg-surface w-full max-w-4xl max-h-[90vh] overflow-y-auto"
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close button */}
           <button
             onClick={handleClose}
             className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
@@ -65,7 +59,6 @@ export default function PortfolioModal({ item, onClose }) {
             </svg>
           </button>
 
-          {/* Main image */}
           <div className="aspect-[16/9] md:aspect-[21/9]">
             <LazyImage
               src={images[currentImage]}
@@ -75,7 +68,6 @@ export default function PortfolioModal({ item, onClose }) {
             />
           </div>
 
-          {/* Thumbnail navigation */}
           {images.length > 1 && (
             <div className="flex gap-2 px-6 pt-4 overflow-x-auto">
               {images.map((img, index) => (
@@ -92,7 +84,6 @@ export default function PortfolioModal({ item, onClose }) {
             </div>
           )}
 
-          {/* Info */}
           <div className="p-6 md:p-10">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
               <div>
@@ -102,7 +93,7 @@ export default function PortfolioModal({ item, onClose }) {
                 <h2 className="font-serif text-2xl md:text-3xl font-bold text-primary mt-1">
                   {item.title}
                 </h2>
-                <p className="text-muted mt-2">客户：{item.client} · {item.year}</p>
+                <p className="text-muted mt-2">{site.portfolio.clientLabel}{item.client} · {item.year}</p>
               </div>
             </div>
 
@@ -111,10 +102,7 @@ export default function PortfolioModal({ item, onClose }) {
             {item.tags && item.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {item.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 text-xs border border-border text-muted"
-                  >
+                  <span key={tag} className="px-3 py-1 text-xs border border-border text-muted">
                     {tag}
                   </span>
                 ))}

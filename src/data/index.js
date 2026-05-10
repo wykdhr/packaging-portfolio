@@ -8,7 +8,8 @@ const portfolio = Object.values(portfolioModules)
 const servicesModules = import.meta.glob('./services/*.json', { eager: true })
 const services = Object.values(servicesModules).map((m) => m.default)
 
-// Company data
+// Company & site settings
 import company from './company.json'
+import site from './site.json'
 
-export { portfolio, services, company }
+export { portfolio, services, company, site }

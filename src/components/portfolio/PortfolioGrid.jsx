@@ -1,12 +1,13 @@
 import { AnimatePresence } from 'framer-motion'
 import PortfolioCard from './PortfolioCard'
+import { site } from '../../data/index.js'
 
 export default function PortfolioGrid({ items, onItemClick }) {
   if (items.length === 0) {
     return (
       <div className="text-center py-20 text-muted">
-        <p className="text-lg">暂无作品</p>
-        <p className="text-sm mt-2">该分类下还没有作品，请查看其他分类</p>
+        <p className="text-lg">{site.portfolio.emptyTitle}</p>
+        <p className="text-sm mt-2">{site.portfolio.empty}</p>
       </div>
     )
   }

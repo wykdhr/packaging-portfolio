@@ -1,0 +1,105 @@
+{
+  "logo": {
+    "text": "PACK",
+    "accent": "."
+  },
+  "nav": [
+    { "label": "首页", "path": "/" },
+    { "label": "作品集", "path": "/portfolio" },
+    { "label": "关于我们", "path": "/about" },
+    { "label": "服务项目", "path": "/services" },
+    { "label": "联系我们", "path": "/contact" }
+  ],
+  "home": {
+    "hero": {
+      "title1": "让包装成为",
+      "title2": "品牌的第一印象",
+      "subtitle": "专注包装设计领域，以匠心与创意为品牌打造独具辨识度的视觉体验",
+      "cta1": "浏览作品集",
+      "cta2": "联系我们"
+    },
+    "featured": {
+      "title": "精选作品",
+      "subtitle": "用心打磨每一个项目",
+      "cta": "查看全部作品 →"
+    },
+    "services": {
+      "title": "我们的服务",
+      "subtitle": "从创意到落地，一站式包装设计解决方案",
+      "cta": "了解更多 →"
+    }
+  },
+  "portfolio": {
+    "title": "作品集",
+    "subtitle": "每一个项目，都是我们与品牌共同讲述的故事",
+    "empty": "该分类下还没有作品，请查看其他分类",
+    "emptyTitle": "暂无作品",
+    "categories": [
+      { "key": "all", "label": "全部" },
+      { "key": "food", "label": "食品包装" },
+      { "key": "cosmetic", "label": "化妆品包装" },
+      { "key": "gift", "label": "礼品盒" },
+      { "key": "beverage", "label": "饮料包装" },
+      { "key": "other", "label": "其他" }
+    ],
+    "clientLabel": "客户：",
+    "noImage": "暂无图片"
+  },
+  "services": {
+    "title": "服务项目",
+    "subtitle": "从品牌策略到印刷落地，我们提供全流程的包装设计服务",
+    "ctaTitle": "有项目想要合作？",
+    "ctaSubtitle": "告诉我们您的需求，我们将为您提供专业的包装设计解决方案",
+    "ctaButton": "联系我们"
+  },
+  "about": {
+    "title": "让包装成为品牌的第一印象",
+    "subtitle": "",
+    "introTitle": "关于我们",
+    "timelineTitle": "发展历程",
+    "timelineSubtitle": "每一步成长，都离不开对设计的热爱与坚持"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "期待与您的合作，让我们一起打造令人心动的包装",
+    "formTitle": "发送留言",
+    "infoTitle": "联系方式",
+    "hoursTitle": "工作时间",
+    "form": {
+      "namePlaceholder": "您的姓名 *",
+      "emailPlaceholder": "您的邮箱 *",
+      "subjectPlaceholder": "咨询主题 *",
+      "messagePlaceholder": "请描述您的需求... *",
+      "submitButton": "发送留言",
+      "successMessage": "感谢您的留言，我们会尽快回复！",
+      "errorMessage": "发送失败，请稍后重试或直接发送邮件至",
+      "nameError": "请输入姓名",
+      "emailError": "请输入邮箱",
+      "emailFormatError": "邮箱格式不正确",
+      "subjectError": "请输入主题",
+      "messageError": "请输入留言内容"
+    },
+    "hours": {
+      "weekday": "周一至周五：9:00 - 18:00",
+      "saturday": "周六：10:00 - 17:00",
+      "sunday": "周日：休息"
+    },
+    "labels": {
+      "phone": "电话",
+      "email": "邮箱",
+      "address": "地址",
+      "wechat": "微信"
+    }
+  },
+  "footer": {
+    "description": "专业包装设计工作室，致力于为品牌打造独具匠心的包装解决方案。",
+    "quickLinks": "快速链接",
+    "contactTitle": "联系我们",
+    "copyright": "All rights reserved."
+  },
+  "notFound": {
+    "title": "404",
+    "message": "页面未找到",
+    "backHome": "返回首页"
+  }
+}

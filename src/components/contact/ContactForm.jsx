@@ -1,21 +1,23 @@
 import { useState } from 'react'
 import Button from '../shared/Button'
+import { site, company } from '../../data/index.js'
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
-  const [status, setStatus] = useState(null) // 'success' | 'error' | null
+  const [status, setStatus] = useState(null)
   const [errors, setErrors] = useState({})
+  const t = site.contact.form
 
   const validate = () => {
     const errs = {}
-    if (!form.name.trim()) errs.name = '请输入姓名'
+    if (!form.name.trim()) errs.name = t.nameError
     if (!form.email.trim()) {
-      errs.email = '请输入邮箱'
+      errs.email = t.emailError
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      errs.email = '邮箱格式不正确'
+      errs.email = t.emailFormatError
     }
-    if (!form.subject.trim()) errs.subject = '请输入主题'
-    if (!form.message.trim()) errs.message = '请输入留言内容'
+    if (!form.subject.trim()) errs.subject = t.subjectError
+    if (!form.message.trim()) errs.message = t.messageError
     return errs
   }
 
@@ -27,7 +29,7 @@ export default function ContactForm() {
 
     setStatus(null)
     try {
-      const response = await fetch('https://formsubmit.co/ajax/3342064820@qq.com', {
+      const response = await fetch(`https://formsubmit.co/ajax/${company.contact.email}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -61,55 +63,35 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <div>
-        <input
-          type="text"
-          placeholder="您的姓名 *"
-          value={form.name}
-          onChange={handleChange('name')}
-          className={inputClass('name')}
-        />
+        <input type="text" placeholder={t.namePlaceholder} value={form.name}
+          onChange={handleChange('name')} className={inputClass('name')} />
         {errors.name && <p className="text-red-400 text-xs mt-1">{errors.name}</p>}
       </div>
       <div>
-        <input
-          type="email"
-          placeholder="您的邮箱 *"
-          value={form.email}
-          onChange={handleChange('email')}
-          className={inputClass('email')}
-        />
+        <input type="email" placeholder={t.emailPlaceholder} value={form.email}
+          onChange={handleChange('email')} className={inputClass('email')} />
         {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email}</p>}
       </div>
       <div>
-        <input
-          type="text"
-          placeholder="咨询主题 *"
-          value={form.subject}
-          onChange={handleChange('subject')}
-          className={inputClass('subject')}
-        />
+        <input type="text" placeholder={t.subjectPlaceholder} value={form.subject}
+          onChange={handleChange('subject')} className={inputClass('subject')} />
         {errors.subject && <p className="text-red-400 text-xs mt-1">{errors.subject}</p>}
       </div>
       <div>
-        <textarea
-          rows={5}
-          placeholder="请描述您的需求... *"
-          value={form.message}
-          onChange={handleChange('message')}
-          className={`${inputClass('message')} resize-none`}
-        />
+        <textarea rows={5} placeholder={t.messagePlaceholder} value={form.message}
+          onChange={handleChange('message')} className={`${inputClass('message')} resize-none`} />
         {errors.message && <p className="text-red-400 text-xs mt-1">{errors.message}</p>}
       </div>
 
       <Button type="submit" size="md" className="w-full sm:w-auto">
-        发送留言
+        {t.submitButton}
       </Button>
 
       {status === 'success' && (
-        <p className="text-green-600 text-sm">感谢您的留言，我们会尽快回复！</p>
+        <p className="text-green-600 text-sm">{t.successMessage}</p>
       )}
       {status === 'error' && (
-        <p className="text-red-400 text-sm">发送失败，请稍后重试或直接发送邮件至 hello@packdesign.cn</p>
+        <p className="text-red-400 text-sm">{t.errorMessage} {company.contact.email}</p>
       )}
     </form>
   )

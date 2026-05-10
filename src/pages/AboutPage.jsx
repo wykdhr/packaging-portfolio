@@ -1,9 +1,11 @@
-import { company } from '../data/index.js'
+import { company, site } from '../data/index.js'
 import SectionTitle from '../components/shared/SectionTitle'
 import CompanyIntro from '../components/about/CompanyIntro'
 import Timeline from '../components/about/Timeline'
 
 export default function AboutPage() {
+  const { about } = site
+
   return (
     <div className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
@@ -12,12 +14,11 @@ export default function AboutPage() {
           subtitle={`${company.nameCN}，成立于${company.founded}年`}
         />
 
-        <CompanyIntro company={company} />
+        <CompanyIntro company={company} title={about.introTitle} />
 
-        {/* Timeline */}
         <SectionTitle
-          title="发展历程"
-          subtitle="每一步成长，都离不开对设计的热爱与坚持"
+          title={about.timelineTitle}
+          subtitle={about.timelineSubtitle}
         />
         <div className="max-w-3xl mx-auto">
           <Timeline milestones={company.milestones} />

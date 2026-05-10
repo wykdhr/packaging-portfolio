@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 
-export default function CompanyIntro({ company }) {
+export default function CompanyIntro({ company, title }) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
       {/* Text */}
@@ -11,7 +11,7 @@ export default function CompanyIntro({ company }) {
         transition={{ duration: 0.6 }}
       >
         <h2 className="font-serif text-3xl md:text-4xl font-bold text-primary mb-6">
-          关于我们
+          {title}
         </h2>
         <div className="text-muted leading-relaxed space-y-4">
           {company.description.split('\n').filter(Boolean).map((paragraph, i) => (

@@ -1,25 +1,22 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { portfolio } from '../../data/index.js'
+import { portfolio, site } from '../../data/index.js'
 import LazyImage from '../shared/LazyImage'
 import SectionTitle from '../shared/SectionTitle'
 import Button from '../shared/Button'
 
-const categoryLabels = {
-  food: '食品包装',
-  cosmetic: '化妆品包装',
-  gift: '礼品盒',
-  beverage: '饮料包装',
-  other: '其他',
-}
+const categoryLabels = Object.fromEntries(
+  site.portfolio.categories.filter(c => c.key !== 'all').map(c => [c.key, c.label])
+)
 
 export default function FeaturedWorks() {
   const featured = portfolio.filter((item) => item.featured).slice(0, 3)
+  const { featured: section } = site.home
 
   return (
     <section className="py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionTitle title="精选作品" subtitle="用心打磨每一个项目" />
+        <SectionTitle title={section.title} subtitle={section.subtitle} />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featured.map((item, index) => (
@@ -53,7 +50,7 @@ export default function FeaturedWorks() {
 
         <div className="text-center mt-12">
           <Button to="/portfolio" variant="ghost" size="md">
-            查看全部作品 &rarr;
+            {section.cta}
           </Button>
         </div>
       </div>

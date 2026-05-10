@@ -1,14 +1,7 @@
 import { useState } from 'react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const navLinks = [
-  { to: '/', label: '首页' },
-  { to: '/portfolio', label: '作品集' },
-  { to: '/about', label: '关于我们' },
-  { to: '/services', label: '服务项目' },
-  { to: '/contact', label: '联系我们' },
-]
+import { site, company } from '../../data/index.js'
 
 export default function Layout() {
   const location = useLocation()
@@ -35,6 +28,7 @@ export default function Layout() {
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { logo, nav } = site
 
   const linkClass = ({ isActive }) =>
     `text-sm tracking-wide transition-colors ${
@@ -45,19 +39,17 @@ function Header() {
     <header className="sticky top-0 z-50 bg-surface/90 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link to="/" className="font-serif text-xl font-bold tracking-wider text-primary">
-          PACK<span className="text-accent">.</span>
+          {logo.text}<span className="text-accent">{logo.accent}</span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <NavLink key={link.to} to={link.to} className={linkClass} end={link.to === '/'}>
+          {nav.map((link) => (
+            <NavLink key={link.path} to={link.path} className={linkClass} end={link.path === '/'}>
               {link.label}
             </NavLink>
           ))}
         </nav>
 
-        {/* Mobile hamburger */}
         <button
           className="lg:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -78,7 +70,6 @@ function Header() {
         </button>
       </div>
 
-      {/* Mobile menu overlay */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -88,18 +79,18 @@ function Header() {
             className="fixed inset-0 top-16 bg-surface z-40 lg:hidden"
           >
             <nav className="flex flex-col items-center gap-8 pt-16">
-              {navLinks.map((link, i) => (
+              {nav.map((link, i) => (
                 <motion.div
-                  key={link.to}
+                  key={link.path}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ delay: i * 0.05 }}
                 >
                   <NavLink
-                    to={link.to}
+                    to={link.path}
                     className={linkClass}
-                    end={link.to === '/'}
+                    end={link.path === '/'}
                     onClick={() => setMenuOpen(false)}
                   >
                     {link.label}
@@ -115,39 +106,41 @@ function Header() {
 }
 
 function Footer() {
+  const { footer, nav } = site
+
   return (
     <footer className="bg-primary text-surface/80 py-16">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
             <h3 className="font-serif text-xl font-bold text-surface mb-3">
-              PACK<span className="text-accent">.</span>
+              {site.logo.text}<span className="text-accent">{site.logo.accent}</span>
             </h3>
             <p className="text-sm leading-relaxed text-surface/60">
-              专业包装设计工作室，致力于为品牌打造独具匠心的包装解决方案。
+              {footer.description}
             </p>
           </div>
           <div>
-            <h4 className="text-sm font-medium text-surface mb-4">快速链接</h4>
+            <h4 className="text-sm font-medium text-surface mb-4">{footer.quickLinks}</h4>
             <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <Link key={link.to} to={link.to} className="text-sm text-surface/60 hover:text-accent transition-colors">
+              {nav.map((link) => (
+                <Link key={link.path} to={link.path} className="text-sm text-surface/60 hover:text-accent transition-colors">
                   {link.label}
                 </Link>
               ))}
             </div>
           </div>
           <div>
-            <h4 className="text-sm font-medium text-surface mb-4">联系我们</h4>
+            <h4 className="text-sm font-medium text-surface mb-4">{footer.contactTitle}</h4>
             <div className="text-sm text-surface/60 space-y-1">
-              <p>电话：400-XXX-XXXX</p>
-              <p>邮箱：3342064820@qq.com</p>
-              <p>地址：中国·上海</p>
+              <p>{site.contact.labels.phone}：{company.contact.phone}</p>
+              <p>{site.contact.labels.email}：{company.contact.email}</p>
+              <p>{site.contact.labels.address}：{company.contact.address}</p>
             </div>
           </div>
         </div>
         <div className="mt-12 pt-6 border-t border-surface/20 text-center text-xs text-surface/40">
-          &copy; {new Date().getFullYear()} Pack Design. All rights reserved.
+          &copy; {new Date().getFullYear()} {company.name}. {footer.copyright}
         </div>
       </div>
     </footer>
