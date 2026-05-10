@@ -1,0 +1,75 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: public/images
+public_folder: /images
+
+site_url: http://localhost:5173
+display_url: http://localhost:5173
+
+locale: zh_Hans
+
+collections:
+  - name: portfolio
+    label: 作品集
+    folder: src/data
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "ID", name: "id", widget: "string", hint: "英文标识，如 spring-festival-gift-2025" }
+      - { label: "作品标题", name: "title", widget: "string" }
+      - { label: "分类", name: "category", widget: "select", options: ["food", "cosmetic", "gift", "beverage", "other"], default: "food" }
+      - { label: "缩略图", name: "thumbnail", widget: "image" }
+      - { label: "详情图片", name: "images", widget: "list", field: { label: "图片", name: "image", widget: "image" } }
+      - { label: "描述", name: "description", widget: "text" }
+      - { label: "客户名称", name: "client", widget: "string" }
+      - { label: "年份", name: "year", widget: "number", value_type: "int" }
+      - { label: "首页精选", name: "featured", widget: "boolean", default: false }
+      - { label: "标签", name: "tags", widget: "list", field: { label: "标签", name: "tag", widget: "string" } }
+
+  - name: services
+    label: 服务项目
+    folder: src/data
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "ID", name: "id", widget: "string" }
+      - { label: "图标", name: "icon", widget: "string" }
+      - { label: "服务名称", name: "title", widget: "string" }
+      - { label: "服务描述", name: "description", widget: "text" }
+      - { label: "具体项目", name: "items", widget: "list", field: { label: "项目", name: "item", widget: "string" } }
+
+  - name: company
+    label: 公司信息
+    folder: src/data
+    create: false
+    editor:
+      preview: false
+    files:
+      - name: company
+        label: 公司信息
+        file: src/data/company.json
+        fields:
+          - { label: "公司名称", name: "name", widget: "string" }
+          - { label: "中文名称", name: "nameCN", widget: "string" }
+          - { label: "成立年份", name: "founded", widget: "number", value_type: "int" }
+          - { label: "公司简介", name: "description", widget: "markdown" }
+          - { label: "品牌理念", name: "philosophy", widget: "string" }
+          - { label: "联系电话", name: "contact.phone", widget: "string" }
+          - { label: "邮箱", name: "contact.email", widget: "string" }
+          - { label: "地址", name: "contact.address", widget: "string" }
+          - { label: "微信", name: "contact.wechat", widget: "string" }
+          - name: milestones
+            label: 发展历程
+            widget: list
+            fields:
+              - { label: "年份", name: "year", widget: "number", value_type: "int" }
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "描述", name: "description", widget: "string" }
